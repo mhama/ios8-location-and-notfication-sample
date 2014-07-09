@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6162" systemVersion="14A238h" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="PxF-Ax-wPy">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6185.7" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="PxF-Ax-wPy">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6160"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6181.2"/>
     </dependencies>
     <scenes>
         <!--Data View Controller-->
         <scene sceneID="3qM-eY-iJ1">
             <objects>
-                <viewController storyboardIdentifier="DataViewController" id="hzS-jB-y9W" customClass="DataViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DataViewController" id="hzS-jB-y9W" customClass="DataViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6LC-1I-4vP"/>
                         <viewControllerLayoutGuide type="bottom" id="a4F-Wq-f2I"/>
@@ -18,7 +18,76 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wFW-NB-ba9">
                                 <rect key="frame" x="8" y="45" width="464" height="427"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iwz-cY-nXg">
+                                        <rect key="frame" x="38" y="199" width="120" height="30"/>
+                                        <state key="normal" title="設定アプリに行く">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="gotoSettings:" destination="hzS-jB-y9W" eventType="touchUpInside" id="6sk-Qr-i1x"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="21r-gs-omC">
+                                        <rect key="frame" x="38" y="50" width="210" height="30"/>
+                                        <state key="normal" title="位置情報許可（アプリ起動時）">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="requestLocationWhenInUse:" destination="hzS-jB-y9W" eventType="touchUpInside" id="bT8-Vm-Ybw"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Ph-4P-fah">
+                                        <rect key="frame" x="38" y="277" width="360" height="52"/>
+                                        <state key="normal" title="通知する（５秒後に来るのでアプリを閉じて下さい）">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="notify:" destination="hzS-jB-y9W" eventType="touchUpInside" id="sEf-wa-gfR"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Dl-i8-gYh">
+                                        <rect key="frame" x="38" y="337" width="241" height="30"/>
+                                        <state key="normal" title="ビーコン Location Notification 登録">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="addLocationNotification:" destination="hzS-jB-y9W" eventType="touchUpInside" id="HZl-VS-aqq"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UIq-R3-KH8">
+                                        <rect key="frame" x="38" y="97" width="150" height="30"/>
+                                        <state key="normal" title="位置情報許可（常時）">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="requestLocationAlways:" destination="hzS-jB-y9W" eventType="touchUpInside" id="5Yd-50-iut"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t41-o0-G4g">
+                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <state key="normal" title="Visit Monitoring開始">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="38" y="391" width="137" height="30"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="startVisitMonitoring:" destination="hzS-jB-y9W" eventType="touchUpInside" id="vHn-nL-7MY"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="t41-o0-G4g"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="subviews">
+                                        <include reference="t41-o0-G4g"/>
+                                    </mask>
+                                </variation>
                             </view>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="i7n-lc-4In">
                                 <rect key="frame" x="8" y="20" width="464" height="17"/>
@@ -49,7 +118,7 @@
         <!--Root View Controller-->
         <scene sceneID="3GU-QQ-JyJ">
             <objects>
-                <viewController id="PxF-Ax-wPy" customClass="RootViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="PxF-Ax-wPy" customClass="RootViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="17i-ZA-3zy"/>
                         <viewControllerLayoutGuide type="bottom" id="8Yh-h8-jIR"/>
